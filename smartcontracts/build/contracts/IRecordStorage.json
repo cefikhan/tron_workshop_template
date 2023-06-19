@@ -1,0 +1,2487 @@
+{
+  "contractName": "IRecordStorage",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "keyIndex",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        }
+      ],
+      "name": "NewKey",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ResetRecords",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "keyIndex",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "valueIndex",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "name": "Set",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "keyHash",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getByHash",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string[]",
+          "name": "keys",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMany",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "keyHashes",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getManyByHash",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "keys",
+          "type": "string[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "values",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string[]",
+          "name": "keys",
+          "type": "string[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "values",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "reconfigure",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "reset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "keyHash",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "setByHash",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string[]",
+          "name": "keys",
+          "type": "string[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "values",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMany",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "keyHashes",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "values",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "setManyByHash",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "//SPDX-License-Identifier:MIT\npragma solidity ^0.8.17;\n\nimport {IRecordReader} from \"./IRecordReader.sol\";\n\ninterface IRecordStorage is IRecordReader {\n    event Set(uint256 indexed tokenId, string indexed keyIndex, string indexed valueIndex, string key, string value);\n\n    event NewKey(uint256 indexed tokenId, string indexed keyIndex, string key);\n\n    event ResetRecords(uint256 indexed tokenId);\n\n    /**\n     * @dev Set record by key\n     * @param key The key set the value of\n     * @param value The value to set key to\n     * @param tokenId ERC-721 token id to set\n     */\n    function set(\n        string calldata key,\n        string calldata value,\n        uint256 tokenId\n    ) external;\n\n    /**\n     * @dev Set records by keys\n     * @param keys The keys set the values of\n     * @param values Records values\n     * @param tokenId ERC-721 token id of the domain\n     */\n    function setMany(\n        string[] memory keys,\n        string[] memory values,\n        uint256 tokenId\n    ) external;\n\n    /**\n     * @dev Set record by key hash\n     * @param keyHash The key hash set the value of\n     * @param value The value to set key to\n     * @param tokenId ERC-721 token id to set\n     */\n    function setByHash(\n        uint256 keyHash,\n        string calldata value,\n        uint256 tokenId\n    ) external;\n\n    /**\n     * @dev Set records by key hashes\n     * @param keyHashes The key hashes set the values of\n     * @param values Records values\n     * @param tokenId ERC-721 token id of the domain\n     */\n    function setManyByHash(\n        uint256[] calldata keyHashes,\n        string[] calldata values,\n        uint256 tokenId\n    ) external;\n\n    /**\n     * @dev Reset all domain records and set new ones\n     * @param keys New record keys\n     * @param values New record values\n     * @param tokenId ERC-721 token id of the domain\n     */\n    function reconfigure(\n        string[] memory keys,\n        string[] memory values,\n        uint256 tokenId\n    ) external;\n\n    /**\n     * @dev Function to reset all existing records on a domain.\n     * @param tokenId ERC-721 token id to set.\n     */\n    function reset(uint256 tokenId) external;\n}\n",
+  "sourcePath": "/home/ideofuzion/Tron/monorepo/TNS/smartcontracts/contracts/interfaces/IRecordStorage.sol",
+  "ast": {
+    "absolutePath": "/home/ideofuzion/Tron/monorepo/TNS/smartcontracts/contracts/interfaces/IRecordStorage.sol",
+    "exportedSymbols": {
+      "IRecordReader": [
+        4471
+      ],
+      "IRecordStorage": [
+        4564
+      ]
+    },
+    "id": 4565,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4473,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "30:24:14"
+      },
+      {
+        "absolutePath": "/home/ideofuzion/Tron/monorepo/TNS/smartcontracts/contracts/interfaces/IRecordReader.sol",
+        "file": "./IRecordReader.sol",
+        "id": 4475,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 4565,
+        "sourceUnit": 4472,
+        "src": "56:50:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 4474,
+              "name": "IRecordReader",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 4471,
+              "src": "64:13:14",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 4476,
+              "name": "IRecordReader",
+              "nameLocations": [
+                "136:13:14"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 4471,
+              "src": "136:13:14"
+            },
+            "id": 4477,
+            "nodeType": "InheritanceSpecifier",
+            "src": "136:13:14"
+          }
+        ],
+        "canonicalName": "IRecordStorage",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4564,
+        "linearizedBaseContracts": [
+          4564,
+          4471
+        ],
+        "name": "IRecordStorage",
+        "nameLocation": "118:14:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "eventSelector": "851ffe8e74d5015261dba0a1f9e1b0e5d42c5af5d2ad1908fee897c7d80a0d92",
+            "id": 4489,
+            "name": "Set",
+            "nameLocation": "162:3:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4488,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4479,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "182:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "166:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4478,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4481,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "keyIndex",
+                  "nameLocation": "206:8:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "191:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4480,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4483,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "valueIndex",
+                  "nameLocation": "231:10:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "216:25:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4482,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "216:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4485,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "250:3:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "243:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4484,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "243:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4487,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "262:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "255:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4486,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "255:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "165:103:14"
+            },
+            "src": "156:113:14"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "7ae4f661958fbecc2f77be6b0eb280d2a6f604b29e1e7221c82b9da0c4af7f86",
+            "id": 4497,
+            "name": "NewKey",
+            "nameLocation": "281:6:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4496,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4491,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "304:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "288:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4490,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "288:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4493,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "keyIndex",
+                  "nameLocation": "328:8:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "313:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4492,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "313:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4495,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "345:3:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "338:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4494,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "338:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "287:62:14"
+            },
+            "src": "275:75:14"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "185c30856dadb58bf097c1f665a52ada7029752dbcad008ea3fefc73bee8c9fe",
+            "id": 4501,
+            "name": "ResetRecords",
+            "nameLocation": "362:12:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4500,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4499,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "391:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4501,
+                  "src": "375:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4498,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "375:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "374:25:14"
+            },
+            "src": "356:44:14"
+          },
+          {
+            "documentation": {
+              "id": 4502,
+              "nodeType": "StructuredDocumentation",
+              "src": "406:174:14",
+              "text": " @dev Set record by key\n @param key The key set the value of\n @param value The value to set key to\n @param tokenId ERC-721 token id to set"
+            },
+            "functionSelector": "47c81699",
+            "id": 4511,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nameLocation": "594:3:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4509,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4504,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "623:3:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4511,
+                  "src": "607:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4503,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "607:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4506,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "652:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4511,
+                  "src": "636:21:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4505,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "636:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4508,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "675:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4511,
+                  "src": "667:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4507,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "667:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "597:91:14"
+            },
+            "returnParameters": {
+              "id": 4510,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "697:0:14"
+            },
+            "scope": 4564,
+            "src": "585:113:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4512,
+              "nodeType": "StructuredDocumentation",
+              "src": "704:178:14",
+              "text": " @dev Set records by keys\n @param keys The keys set the values of\n @param values Records values\n @param tokenId ERC-721 token id of the domain"
+            },
+            "functionSelector": "ce92b33e",
+            "id": 4523,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setMany",
+            "nameLocation": "896:7:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4521,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4515,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "nameLocation": "929:4:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4523,
+                  "src": "913:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4513,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "913:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4514,
+                    "nodeType": "ArrayTypeName",
+                    "src": "913:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4518,
+                  "mutability": "mutable",
+                  "name": "values",
+                  "nameLocation": "959:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4523,
+                  "src": "943:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4516,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "943:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4517,
+                    "nodeType": "ArrayTypeName",
+                    "src": "943:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4520,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "983:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4523,
+                  "src": "975:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4519,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "975:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "903:93:14"
+            },
+            "returnParameters": {
+              "id": 4522,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1005:0:14"
+            },
+            "scope": 4564,
+            "src": "887:119:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4524,
+              "nodeType": "StructuredDocumentation",
+              "src": "1012:188:14",
+              "text": " @dev Set record by key hash\n @param keyHash The key hash set the value of\n @param value The value to set key to\n @param tokenId ERC-721 token id to set"
+            },
+            "functionSelector": "4a72584d",
+            "id": 4533,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setByHash",
+            "nameLocation": "1214:9:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4531,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4526,
+                  "mutability": "mutable",
+                  "name": "keyHash",
+                  "nameLocation": "1241:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4533,
+                  "src": "1233:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4525,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1233:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4528,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "1274:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4533,
+                  "src": "1258:21:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4527,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1258:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4530,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1297:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4533,
+                  "src": "1289:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4529,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1289:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1223:87:14"
+            },
+            "returnParameters": {
+              "id": 4532,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1319:0:14"
+            },
+            "scope": 4564,
+            "src": "1205:115:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4534,
+              "nodeType": "StructuredDocumentation",
+              "src": "1326:195:14",
+              "text": " @dev Set records by key hashes\n @param keyHashes The key hashes set the values of\n @param values Records values\n @param tokenId ERC-721 token id of the domain"
+            },
+            "functionSelector": "27f18975",
+            "id": 4545,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setManyByHash",
+            "nameLocation": "1535:13:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4543,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4537,
+                  "mutability": "mutable",
+                  "name": "keyHashes",
+                  "nameLocation": "1577:9:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4545,
+                  "src": "1558:28:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4535,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1558:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 4536,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1558:9:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4540,
+                  "mutability": "mutable",
+                  "name": "values",
+                  "nameLocation": "1614:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4545,
+                  "src": "1596:24:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4538,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1596:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4539,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1596:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4542,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1638:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4545,
+                  "src": "1630:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4541,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1630:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1548:103:14"
+            },
+            "returnParameters": {
+              "id": 4544,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1660:0:14"
+            },
+            "scope": 4564,
+            "src": "1526:135:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4546,
+              "nodeType": "StructuredDocumentation",
+              "src": "1667:192:14",
+              "text": " @dev Reset all domain records and set new ones\n @param keys New record keys\n @param values New record values\n @param tokenId ERC-721 token id of the domain"
+            },
+            "functionSelector": "ec129eea",
+            "id": 4557,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reconfigure",
+            "nameLocation": "1873:11:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4555,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4549,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "nameLocation": "1910:4:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "1894:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4547,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1894:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4548,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1894:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4552,
+                  "mutability": "mutable",
+                  "name": "values",
+                  "nameLocation": "1940:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "1924:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4550,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1924:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4551,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1924:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4554,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1964:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "1956:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4553,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1956:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1884:93:14"
+            },
+            "returnParameters": {
+              "id": 4556,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1986:0:14"
+            },
+            "scope": 4564,
+            "src": "1864:123:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4558,
+              "nodeType": "StructuredDocumentation",
+              "src": "1993:122:14",
+              "text": " @dev Function to reset all existing records on a domain.\n @param tokenId ERC-721 token id to set."
+            },
+            "functionSelector": "310bd74b",
+            "id": 4563,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reset",
+            "nameLocation": "2129:5:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4561,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4560,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "2143:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4563,
+                  "src": "2135:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4559,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2135:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2134:17:14"
+            },
+            "returnParameters": {
+              "id": 4562,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2160:0:14"
+            },
+            "scope": 4564,
+            "src": "2120:41:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4565,
+        "src": "108:2055:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "30:2134:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ideofuzion/Tron/monorepo/TNS/smartcontracts/contracts/interfaces/IRecordStorage.sol",
+    "exportedSymbols": {
+      "IRecordReader": [
+        4471
+      ],
+      "IRecordStorage": [
+        4564
+      ]
+    },
+    "id": 4565,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4473,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "30:24:14"
+      },
+      {
+        "absolutePath": "/home/ideofuzion/Tron/monorepo/TNS/smartcontracts/contracts/interfaces/IRecordReader.sol",
+        "file": "./IRecordReader.sol",
+        "id": 4475,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 4565,
+        "sourceUnit": 4472,
+        "src": "56:50:14",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 4474,
+              "name": "IRecordReader",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 4471,
+              "src": "64:13:14",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 4476,
+              "name": "IRecordReader",
+              "nameLocations": [
+                "136:13:14"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 4471,
+              "src": "136:13:14"
+            },
+            "id": 4477,
+            "nodeType": "InheritanceSpecifier",
+            "src": "136:13:14"
+          }
+        ],
+        "canonicalName": "IRecordStorage",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4564,
+        "linearizedBaseContracts": [
+          4564,
+          4471
+        ],
+        "name": "IRecordStorage",
+        "nameLocation": "118:14:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "eventSelector": "851ffe8e74d5015261dba0a1f9e1b0e5d42c5af5d2ad1908fee897c7d80a0d92",
+            "id": 4489,
+            "name": "Set",
+            "nameLocation": "162:3:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4488,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4479,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "182:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "166:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4478,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "166:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4481,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "keyIndex",
+                  "nameLocation": "206:8:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "191:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4480,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4483,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "valueIndex",
+                  "nameLocation": "231:10:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "216:25:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4482,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "216:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4485,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "250:3:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "243:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4484,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "243:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4487,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "262:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4489,
+                  "src": "255:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4486,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "255:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "165:103:14"
+            },
+            "src": "156:113:14"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "7ae4f661958fbecc2f77be6b0eb280d2a6f604b29e1e7221c82b9da0c4af7f86",
+            "id": 4497,
+            "name": "NewKey",
+            "nameLocation": "281:6:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4496,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4491,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "304:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "288:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4490,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "288:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4493,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "keyIndex",
+                  "nameLocation": "328:8:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "313:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4492,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "313:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4495,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "345:3:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4497,
+                  "src": "338:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4494,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "338:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "287:62:14"
+            },
+            "src": "275:75:14"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "185c30856dadb58bf097c1f665a52ada7029752dbcad008ea3fefc73bee8c9fe",
+            "id": 4501,
+            "name": "ResetRecords",
+            "nameLocation": "362:12:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4500,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4499,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "391:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4501,
+                  "src": "375:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4498,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "375:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "374:25:14"
+            },
+            "src": "356:44:14"
+          },
+          {
+            "documentation": {
+              "id": 4502,
+              "nodeType": "StructuredDocumentation",
+              "src": "406:174:14",
+              "text": " @dev Set record by key\n @param key The key set the value of\n @param value The value to set key to\n @param tokenId ERC-721 token id to set"
+            },
+            "functionSelector": "47c81699",
+            "id": 4511,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nameLocation": "594:3:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4509,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4504,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "623:3:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4511,
+                  "src": "607:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4503,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "607:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4506,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "652:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4511,
+                  "src": "636:21:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4505,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "636:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4508,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "675:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4511,
+                  "src": "667:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4507,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "667:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "597:91:14"
+            },
+            "returnParameters": {
+              "id": 4510,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "697:0:14"
+            },
+            "scope": 4564,
+            "src": "585:113:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4512,
+              "nodeType": "StructuredDocumentation",
+              "src": "704:178:14",
+              "text": " @dev Set records by keys\n @param keys The keys set the values of\n @param values Records values\n @param tokenId ERC-721 token id of the domain"
+            },
+            "functionSelector": "ce92b33e",
+            "id": 4523,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setMany",
+            "nameLocation": "896:7:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4521,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4515,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "nameLocation": "929:4:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4523,
+                  "src": "913:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4513,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "913:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4514,
+                    "nodeType": "ArrayTypeName",
+                    "src": "913:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4518,
+                  "mutability": "mutable",
+                  "name": "values",
+                  "nameLocation": "959:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4523,
+                  "src": "943:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4516,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "943:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4517,
+                    "nodeType": "ArrayTypeName",
+                    "src": "943:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4520,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "983:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4523,
+                  "src": "975:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4519,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "975:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "903:93:14"
+            },
+            "returnParameters": {
+              "id": 4522,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1005:0:14"
+            },
+            "scope": 4564,
+            "src": "887:119:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4524,
+              "nodeType": "StructuredDocumentation",
+              "src": "1012:188:14",
+              "text": " @dev Set record by key hash\n @param keyHash The key hash set the value of\n @param value The value to set key to\n @param tokenId ERC-721 token id to set"
+            },
+            "functionSelector": "4a72584d",
+            "id": 4533,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setByHash",
+            "nameLocation": "1214:9:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4531,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4526,
+                  "mutability": "mutable",
+                  "name": "keyHash",
+                  "nameLocation": "1241:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4533,
+                  "src": "1233:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4525,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1233:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4528,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "1274:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4533,
+                  "src": "1258:21:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4527,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1258:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4530,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1297:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4533,
+                  "src": "1289:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4529,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1289:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1223:87:14"
+            },
+            "returnParameters": {
+              "id": 4532,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1319:0:14"
+            },
+            "scope": 4564,
+            "src": "1205:115:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4534,
+              "nodeType": "StructuredDocumentation",
+              "src": "1326:195:14",
+              "text": " @dev Set records by key hashes\n @param keyHashes The key hashes set the values of\n @param values Records values\n @param tokenId ERC-721 token id of the domain"
+            },
+            "functionSelector": "27f18975",
+            "id": 4545,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setManyByHash",
+            "nameLocation": "1535:13:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4543,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4537,
+                  "mutability": "mutable",
+                  "name": "keyHashes",
+                  "nameLocation": "1577:9:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4545,
+                  "src": "1558:28:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4535,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1558:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 4536,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1558:9:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4540,
+                  "mutability": "mutable",
+                  "name": "values",
+                  "nameLocation": "1614:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4545,
+                  "src": "1596:24:14",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4538,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1596:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4539,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1596:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4542,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1638:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4545,
+                  "src": "1630:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4541,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1630:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1548:103:14"
+            },
+            "returnParameters": {
+              "id": 4544,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1660:0:14"
+            },
+            "scope": 4564,
+            "src": "1526:135:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4546,
+              "nodeType": "StructuredDocumentation",
+              "src": "1667:192:14",
+              "text": " @dev Reset all domain records and set new ones\n @param keys New record keys\n @param values New record values\n @param tokenId ERC-721 token id of the domain"
+            },
+            "functionSelector": "ec129eea",
+            "id": 4557,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reconfigure",
+            "nameLocation": "1873:11:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4555,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4549,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "nameLocation": "1910:4:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "1894:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4547,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1894:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4548,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1894:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4552,
+                  "mutability": "mutable",
+                  "name": "values",
+                  "nameLocation": "1940:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "1924:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4550,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1924:6:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4551,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1924:8:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4554,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1964:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4557,
+                  "src": "1956:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4553,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1956:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1884:93:14"
+            },
+            "returnParameters": {
+              "id": 4556,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1986:0:14"
+            },
+            "scope": 4564,
+            "src": "1864:123:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4558,
+              "nodeType": "StructuredDocumentation",
+              "src": "1993:122:14",
+              "text": " @dev Function to reset all existing records on a domain.\n @param tokenId ERC-721 token id to set."
+            },
+            "functionSelector": "310bd74b",
+            "id": 4563,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reset",
+            "nameLocation": "2129:5:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4561,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4560,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "2143:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4563,
+                  "src": "2135:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4559,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2135:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2134:17:14"
+            },
+            "returnParameters": {
+              "id": 4562,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2160:0:14"
+            },
+            "scope": 4564,
+            "src": "2120:41:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4565,
+        "src": "108:2055:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "30:2134:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.18+commit.f18bedfe.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2023-06-19T12:11:26.677Z"
+}

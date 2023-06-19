@@ -1,0 +1,23 @@
+{
+  "name": "smartcontracts",
+  "version": "2.1.0",
+  "description": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "compile":"tronbox compile",
+    "pull-tre":"sudo docker pull tronbox/tre",
+    "spin-blockchain":"sudo docker run -it -p 9090:9090 --rm --name tron tronbox/tre",
+    "test":"tronbox test",
+    "dev": "lite-server -c ./bs-config.js",
+    "migrate": "bash scripts/migrate-and-setup.sh"
+  },
+  "originalAuthors": "truffle-box",
+  "license": "MIT",
+  "devDependencies": {
+    "chalk": "^2.4.1",
+    "lite-server": "^2.5.4"
+  },
+  "dependencies": {}
+}

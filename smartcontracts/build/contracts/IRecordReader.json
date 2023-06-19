@@ -1,0 +1,1340 @@
+{
+  "contractName": "IRecordReader",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "keyHash",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getByHash",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "key",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string[]",
+          "name": "keys",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMany",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "keyHashes",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getManyByHash",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "keys",
+          "type": "string[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "values",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "//SPDX-License-Identifier:MIT\npragma solidity ^0.8.17;\n\ninterface IRecordReader {\n    /**\n     * @dev Function to get record.\n     * @param key The key to query the value of.\n     * @param tokenId The token id to fetch.\n     * @return The value string.\n     */\n    function get(string calldata key, uint256 tokenId) external view returns (string memory);\n\n    /**\n     * @dev Function to get multiple record.\n     * @param keys The keys to query the value of.\n     * @param tokenId The token id to fetch.\n     * @return The values.\n     */\n    function getMany(string[] calldata keys, uint256 tokenId) external view returns (string[] memory);\n\n    /**\n     * @dev Function get value by provied key hash.\n     * @param keyHash The key to query the value of.\n     * @param tokenId The token id to set.\n     */\n    function getByHash(uint256 keyHash, uint256 tokenId) external view returns (string memory key, string memory value);\n\n    /**\n     * @dev Function get values by provied key hashes.\n     * @param keyHashes The key to query the value of.\n     * @param tokenId The token id to set.\n     */\n    function getManyByHash(uint256[] calldata keyHashes, uint256 tokenId)\n        external\n        view\n        returns (string[] memory keys, string[] memory values);\n}",
+  "sourcePath": "/home/ideofuzion/Tron/monorepo/TNS/smartcontracts/contracts/interfaces/IRecordReader.sol",
+  "ast": {
+    "absolutePath": "/home/ideofuzion/Tron/monorepo/TNS/smartcontracts/contracts/interfaces/IRecordReader.sol",
+    "exportedSymbols": {
+      "IRecordReader": [
+        4471
+      ]
+    },
+    "id": 4472,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4421,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "30:24:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IRecordReader",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4471,
+        "linearizedBaseContracts": [
+          4471
+        ],
+        "name": "IRecordReader",
+        "nameLocation": "66:13:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 4422,
+              "nodeType": "StructuredDocumentation",
+              "src": "86:174:13",
+              "text": " @dev Function to get record.\n @param key The key to query the value of.\n @param tokenId The token id to fetch.\n @return The value string."
+            },
+            "functionSelector": "1be5e7ed",
+            "id": 4431,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nameLocation": "274:3:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4427,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4424,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "294:3:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4431,
+                  "src": "278:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4423,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "278:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4426,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "307:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4431,
+                  "src": "299:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4425,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "299:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "277:38:13"
+            },
+            "returnParameters": {
+              "id": 4430,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4429,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4431,
+                  "src": "339:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4428,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "338:15:13"
+            },
+            "scope": 4471,
+            "src": "265:89:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4432,
+              "nodeType": "StructuredDocumentation",
+              "src": "360:179:13",
+              "text": " @dev Function to get multiple record.\n @param keys The keys to query the value of.\n @param tokenId The token id to fetch.\n @return The values."
+            },
+            "functionSelector": "1bd8cc1a",
+            "id": 4443,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMany",
+            "nameLocation": "553:7:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4438,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4435,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "nameLocation": "579:4:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4443,
+                  "src": "561:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4433,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "561:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4434,
+                    "nodeType": "ArrayTypeName",
+                    "src": "561:8:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4437,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "593:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4443,
+                  "src": "585:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4436,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "585:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "560:41:13"
+            },
+            "returnParameters": {
+              "id": 4442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4441,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4443,
+                  "src": "625:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4439,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "625:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4440,
+                    "nodeType": "ArrayTypeName",
+                    "src": "625:8:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "624:17:13"
+            },
+            "scope": 4471,
+            "src": "544:98:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4444,
+              "nodeType": "StructuredDocumentation",
+              "src": "648:159:13",
+              "text": " @dev Function get value by provied key hash.\n @param keyHash The key to query the value of.\n @param tokenId The token id to set."
+            },
+            "functionSelector": "672b9f81",
+            "id": 4455,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getByHash",
+            "nameLocation": "821:9:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4449,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4446,
+                  "mutability": "mutable",
+                  "name": "keyHash",
+                  "nameLocation": "839:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4455,
+                  "src": "831:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4445,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "831:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4448,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "856:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4455,
+                  "src": "848:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4447,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "848:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "830:34:13"
+            },
+            "returnParameters": {
+              "id": 4454,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4451,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "902:3:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4455,
+                  "src": "888:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4450,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "888:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4453,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "921:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4455,
+                  "src": "907:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4452,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "907:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "887:40:13"
+            },
+            "scope": 4471,
+            "src": "812:116:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4456,
+              "nodeType": "StructuredDocumentation",
+              "src": "934:164:13",
+              "text": " @dev Function get values by provied key hashes.\n @param keyHashes The key to query the value of.\n @param tokenId The token id to set."
+            },
+            "functionSelector": "b85afd28",
+            "id": 4470,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getManyByHash",
+            "nameLocation": "1112:13:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4462,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4459,
+                  "mutability": "mutable",
+                  "name": "keyHashes",
+                  "nameLocation": "1145:9:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4470,
+                  "src": "1126:28:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4457,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1126:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 4458,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1126:9:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4461,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1164:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4470,
+                  "src": "1156:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4460,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1156:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1125:47:13"
+            },
+            "returnParameters": {
+              "id": 4469,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4465,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "nameLocation": "1236:4:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4470,
+                  "src": "1220:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4463,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1220:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4464,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1220:8:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4468,
+                  "mutability": "mutable",
+                  "name": "values",
+                  "nameLocation": "1258:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4470,
+                  "src": "1242:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4466,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1242:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4467,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1242:8:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1219:46:13"
+            },
+            "scope": 4471,
+            "src": "1103:163:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4472,
+        "src": "56:1212:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "30:1238:13"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ideofuzion/Tron/monorepo/TNS/smartcontracts/contracts/interfaces/IRecordReader.sol",
+    "exportedSymbols": {
+      "IRecordReader": [
+        4471
+      ]
+    },
+    "id": 4472,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4421,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "30:24:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IRecordReader",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4471,
+        "linearizedBaseContracts": [
+          4471
+        ],
+        "name": "IRecordReader",
+        "nameLocation": "66:13:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 4422,
+              "nodeType": "StructuredDocumentation",
+              "src": "86:174:13",
+              "text": " @dev Function to get record.\n @param key The key to query the value of.\n @param tokenId The token id to fetch.\n @return The value string."
+            },
+            "functionSelector": "1be5e7ed",
+            "id": 4431,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nameLocation": "274:3:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4427,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4424,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "294:3:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4431,
+                  "src": "278:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4423,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "278:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4426,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "307:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4431,
+                  "src": "299:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4425,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "299:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "277:38:13"
+            },
+            "returnParameters": {
+              "id": 4430,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4429,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4431,
+                  "src": "339:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4428,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "338:15:13"
+            },
+            "scope": 4471,
+            "src": "265:89:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4432,
+              "nodeType": "StructuredDocumentation",
+              "src": "360:179:13",
+              "text": " @dev Function to get multiple record.\n @param keys The keys to query the value of.\n @param tokenId The token id to fetch.\n @return The values."
+            },
+            "functionSelector": "1bd8cc1a",
+            "id": 4443,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMany",
+            "nameLocation": "553:7:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4438,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4435,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "nameLocation": "579:4:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4443,
+                  "src": "561:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_calldata_ptr_$dyn_calldata_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4433,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "561:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4434,
+                    "nodeType": "ArrayTypeName",
+                    "src": "561:8:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4437,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "593:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4443,
+                  "src": "585:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4436,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "585:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "560:41:13"
+            },
+            "returnParameters": {
+              "id": 4442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4441,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4443,
+                  "src": "625:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4439,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "625:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4440,
+                    "nodeType": "ArrayTypeName",
+                    "src": "625:8:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "624:17:13"
+            },
+            "scope": 4471,
+            "src": "544:98:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4444,
+              "nodeType": "StructuredDocumentation",
+              "src": "648:159:13",
+              "text": " @dev Function get value by provied key hash.\n @param keyHash The key to query the value of.\n @param tokenId The token id to set."
+            },
+            "functionSelector": "672b9f81",
+            "id": 4455,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getByHash",
+            "nameLocation": "821:9:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4449,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4446,
+                  "mutability": "mutable",
+                  "name": "keyHash",
+                  "nameLocation": "839:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4455,
+                  "src": "831:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4445,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "831:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4448,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "856:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4455,
+                  "src": "848:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4447,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "848:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "830:34:13"
+            },
+            "returnParameters": {
+              "id": 4454,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4451,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nameLocation": "902:3:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4455,
+                  "src": "888:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4450,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "888:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4453,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "921:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4455,
+                  "src": "907:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4452,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "907:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "887:40:13"
+            },
+            "scope": 4471,
+            "src": "812:116:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4456,
+              "nodeType": "StructuredDocumentation",
+              "src": "934:164:13",
+              "text": " @dev Function get values by provied key hashes.\n @param keyHashes The key to query the value of.\n @param tokenId The token id to set."
+            },
+            "functionSelector": "b85afd28",
+            "id": 4470,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getManyByHash",
+            "nameLocation": "1112:13:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4462,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4459,
+                  "mutability": "mutable",
+                  "name": "keyHashes",
+                  "nameLocation": "1145:9:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4470,
+                  "src": "1126:28:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4457,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1126:7:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 4458,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1126:9:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4461,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1164:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4470,
+                  "src": "1156:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4460,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1156:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1125:47:13"
+            },
+            "returnParameters": {
+              "id": 4469,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4465,
+                  "mutability": "mutable",
+                  "name": "keys",
+                  "nameLocation": "1236:4:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4470,
+                  "src": "1220:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4463,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1220:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4464,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1220:8:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4468,
+                  "mutability": "mutable",
+                  "name": "values",
+                  "nameLocation": "1258:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4470,
+                  "src": "1242:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4466,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1242:6:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 4467,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1242:8:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1219:46:13"
+            },
+            "scope": 4471,
+            "src": "1103:163:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4472,
+        "src": "56:1212:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "30:1238:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.18+commit.f18bedfe.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2023-06-19T12:11:26.677Z"
+}
