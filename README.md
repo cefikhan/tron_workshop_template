@@ -7,7 +7,7 @@ Before you can use TronBox, install it using the npm command.
 $ npm install -g tronbox
 ```
 ### Install Packages for monorepo<br>
-Navigate to root directory of TNS ,run command.
+Navigate root directory of TNS ,run command.
 ```
 $ yarn
 ```
