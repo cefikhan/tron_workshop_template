@@ -17,7 +17,7 @@ From root directory of TNS ,run command.
 $ yarn workspace smartcontracts compile
 ```
 
-### Compile the Smart Contracts<br>
+### Pull Tron Runtime Environment<br>
 From root directory of TNS ,run command.
 ```
 $ yarn workspace smartcontracts pull-tre
